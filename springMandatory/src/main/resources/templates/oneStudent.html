@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Details</title>
+</head>
+<body>
+
+
+
+
+
+<table>
+    <tr>
+        <td>Grade</td>
+        <td>Date</td>
+    </tr>
+    <tr>
+        <td th:text="${student?.grades?.grade}"/>
+
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Student <span th:text="${student.studentId}"/> Details</h1>
+<label><b>Student ID:</b></label>
+<span th:text="${student.studentId}"/>
+</br>
+<label><b>Name:</b></label>
+<span th:text="${student.name}"/>
+</br>
+<label><b>Email:</b></label>
+<span th:text="${student.email}"/>
+</br>
+<label><b>Classname:</b></label>
+<span th:text="${student.classname}"/>
+</br>
+<label><b>Age:</b></label>
+<span th:text="${student.age}"/>
+</br>
+<a th:href="@{/grade(studentId=${student.studentId})}" class="btn" id="gg">GIVE GRADE</a>
+</br>
+</br>
+<form action="/allStudents">
+    <input type="submit" value="Back"/>
+</form>
+
+</body>
+</html>

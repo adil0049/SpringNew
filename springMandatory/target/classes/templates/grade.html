@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Give grade</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<h1>Give Grade to Student <span th:text="${student.studentId}"/></h1>
+<form action="/grade" method="post">
+    <input type="hidden" name="studentId" th:value="${student.studentId}">
+    <input type="text" name="grade" placeholder="Grade">
+    <input type="text" name="date" placeholder="Date">
+    <input type="submit" value="Save grade">
+</form>
+</br>
+<form action="/allStudents">
+    <input type="submit" value="Back"/>
+</form>
+
+</body>
+</html>

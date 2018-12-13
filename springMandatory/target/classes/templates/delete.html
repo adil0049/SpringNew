@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Copenhagen students management system</title>
+    <link rel="stylesheet" type="text/css"
+          href="../../static/style.css"
+          th:href="@{style.css}"/>
+</head>
+<body>
+
+<h1>Delete student</h1>
+<p>Students</p>
+<table>
+    <tr>
+        <td>StudentId</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Classname</td>
+        <td>Age</td>
+    </tr>
+    <tr th:each="student: ${students}">
+        <td th:text="${student.studentId}"/>
+        <td th:text="${student.name}"/>
+        <td th:text="${student.email}"/>
+        <!-- http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#reformatting-dates-in-our-home-page -->
+        <td th:text="${student.classname}"/>
+        <td th:text="${student.age}"/>
+        <td><a th:href="@{/delete(studentId=${student.studentId})}" class="btn" id="blue">DELETE</a></td>
+    </tr>
+</table>
+</br>
+<form action="/">
+    <input type="submit" value="Back"/>
+</form>
+</body>
+</html>
